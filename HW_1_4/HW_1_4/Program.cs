@@ -24,7 +24,7 @@ namespace HW_1_4
                 }
 
                 int[] numbers = new int[n];
-                InitialArray(numbers); // Fill initial array with random numbers from 1 to 26.
+                InitializeArray(numbers); // Fill initial array with random numbers from 1 to 26.
 
                 int even = 0, odd = 0;
                 CountNumbers(numbers, ref even, ref odd); // Count the amounts of even and odd numbers in the first array.
@@ -38,9 +38,9 @@ namespace HW_1_4
 
                 char[] evenCharArray = new char[even];
                 char[] oddCharArray = new char[odd];
-                NumToChar(evenNumbers, ref evenCharArray, in alphabet); // Convert even numbers to chars in new array.
-                NumToChar(oddNumbers, ref oddCharArray, in alphabet); // Convert odd numbers to chars in new array.
-                CountCompareUppChars(ref evenCharArray, ref oddCharArray); // Compare the amount of upper letters in arrays.
+                ConvertNumToChar(evenNumbers, ref evenCharArray, in alphabet); // Convert even numbers to chars in new array.
+                ConvertNumToChar(oddNumbers, ref oddCharArray, in alphabet); // Convert odd numbers to chars in new array.
+                CountCompareUpperChars(ref evenCharArray, ref oddCharArray); // Compare the amount of upper letters in arrays.
 
                 Console.Write("\nThe even chars are: ");
                 DisplayCharArray(evenCharArray); // Display array of even chars.
@@ -63,7 +63,7 @@ namespace HW_1_4
         /// </summary>
         /// <param name="numbers">Transfered.</param>
         /// <returns>Filled array.</returns>
-        public static int[] InitialArray(int[] numbers)
+        public static int[] InitializeArray(int[] numbers)
         {
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -119,7 +119,7 @@ namespace HW_1_4
             }
         }
 
-        private static void NumToChar(int[] numbers, ref char[] array, in char[] letters)
+        private static void ConvertNumToChar(int[] numbers, ref char[] array, in char[] letters)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -128,7 +128,7 @@ namespace HW_1_4
             }
         }
 
-        private static void CountCompareUppChars(ref char[] array1, ref char[] array2)
+        private static void CountCompareUpperChars(ref char[] array1, ref char[] array2)
         {
             int i = 0, j = 0;
 
